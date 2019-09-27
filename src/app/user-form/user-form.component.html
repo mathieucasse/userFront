@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <h2 [hidden]="keyIdIsNull()">Update User</h2>
+  <h2 [hidden]="!keyIdIsNull()">Create User</h2>
+  <form class="form-group" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="id">Id</span>
+          </div>
+          <input type="text" class="form-control" id="id" formControlName="id" placeholder="Id" />
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name">Name</span>
+          </div>
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name"/>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="groupId">GroupId</span>
+          </div>
+          <input type="text" class="form-control" id="groupId" formControlName="groupId" placeholder="Group Id"/>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
+      </div>
+      <div class="form-group col-md-2">
+        <button class="btn btn-primary" (click)="resetForm()">Reset</button>
+      </div>
+      <div class="form-group col-md-2">
+        <!-- <button class="btn btn-primary" (click)="this.rechercheService.resetForm()" >Back</button> -->
+<!--        <button class="btn btn-secondary" (click)="onBack()">Back</button>-->
+      </div>
+      <div class="form-group col-md-2">
+        <!-- <button class="btn btn-primary" (click)="this.rechercheService.resetForm()" >Back</button> -->
+        <!-- <button class="btn btn-secondary" (click)="onTest()">Test</button>  -->
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {User} from './user';
+import {UserFormComponent} from './user-form/user-form.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'userFront';
+
+  @ViewChild('formU', {static: true}) userFormComponent: UserFormComponent;
+
+  constructor() {}
+
+  updateUserForm($event: User) {
+    this.userFormComponent.userForm.setValue($event);
+  }
 }
